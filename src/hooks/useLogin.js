@@ -8,13 +8,13 @@ export const useLogin = () => {
   const [isPending, setIsPending] = useState(false);
   const { dispatch } = useAuthContext();
 
-  const login = async () => {
+  const login = async (email, password) => {
     setError(null);
     setIsPending(true);
 
     try {
-      const res = await projectAuth.signInWithEmailAndPassword();
-      dispatch({ type: "SIGNIN", payload: res.user });
+      const res = await projectAuth.signInWithEmailAndPassword(email, password);
+      dispatch({ type: "LOGIN", payload: res.user });
       if (!isCancelled) {
         setIsPending(false);
         setError(null);
