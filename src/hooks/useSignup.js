@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import { projectAuth } from "../firebase/config";
 import { useAuthContext } from "./useAuthContext";
 
-export const useSignup = () => {
+export function useSignup() {
   const [isCancelled, setIsCancelled] = useState(false);
 
   const [error, setError] = useState(null);
@@ -43,4 +43,4 @@ export const useSignup = () => {
   }, []);
 
   return { error, isPending, signup };
-};
+}
