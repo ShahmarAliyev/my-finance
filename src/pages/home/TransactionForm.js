@@ -5,6 +5,8 @@ export default function TransactionForm({ uid }) {
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
   const { addDocument, state } = useFirestore("transactions");
+  const handleChangeName = (e) => setName(e.target.value);
+  const handleChangeAmount = (e) => setAmount(e.target.value);
 
   const handleSubmit = (e) => {
     e.preventDefault();
@@ -32,7 +34,7 @@ export default function TransactionForm({ uid }) {
           <input
             type="text"
             required
-            onChange={(e) => setName(e.target.value)}
+            onChange={handleChangeName}
             value={name}
           />
         </label>
@@ -41,7 +43,7 @@ export default function TransactionForm({ uid }) {
           <input
             type="number"
             required
-            onChange={(e) => setAmount(e.target.value)}
+            onChange={handleChangeAmount}
             value={amount}
           />
         </label>

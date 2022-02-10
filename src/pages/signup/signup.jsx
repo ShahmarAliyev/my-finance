@@ -12,23 +12,22 @@ export default function Signup() {
     e.preventDefault();
     signup(email, password, displayName);
   };
+  const handleChangeDisplayName = (e) => setDisplayName(e.target.value);
+  const handleChangePassword = (e) => setPassword(e.traget.value);
+  const handleEmailChange = (e) => setEmail(e.traget.value);
 
   return (
     <form onSubmit={handleSubmit} className={styles["signup-form"]}>
       <h2>sign up</h2>
       <label>
         <span>email:</span>
-        <input
-          type="email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
+        <input type="email" onChange={handleEmailChange} value={email} />
       </label>
       <label>
         <span>password:</span>
         <input
           type="password"
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={handleChangePassword}
           value={password}
         />
       </label>
@@ -36,7 +35,7 @@ export default function Signup() {
         <span>display name:</span>
         <input
           type="text"
-          onChange={(e) => setDisplayName(e.target.value)}
+          onChange={handleChangeDisplayName}
           value={displayName}
         />
       </label>

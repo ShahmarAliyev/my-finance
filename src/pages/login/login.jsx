@@ -12,23 +12,20 @@ export default function Login() {
     e.preventDefault();
     login(email, password);
   };
-
+  const handleChangePassword = (e) => setPassword(e.traget.value);
+  const handleEmailChange = (e) => setEmail(e.traget.value);
   return (
     <form onSubmit={handleSubmit} className={styles["login-form"]}>
       <h2>login</h2>
       <label>
         <span>email:</span>
-        <input
-          type="email"
-          onChange={(e) => setEmail(e.target.value)}
-          value={email}
-        />
+        <input type="email" onChange={handleEmailChange} value={email} />
       </label>
       <label>
         <span>password:</span>
         <input
           type="password"
-          onChange={(e) => setPassword(e.target.value)}
+          onChange={handleChangePassword}
           value={password}
         />
       </label>
