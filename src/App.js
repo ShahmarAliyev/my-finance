@@ -8,6 +8,9 @@ import Signup from "./pages/signup/signup";
 import Navbar from "./components/Navbar";
 
 function App() {
+  require("react-dom");
+  window.React2 = require("react");
+  console.log(window.React1 === window.React2);
   const { authIsReady, user } = useAuthContext();
   return (
     <div className="App">
