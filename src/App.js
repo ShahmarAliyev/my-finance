@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
+import { HashRouter, Routes, Route, Navigate } from "react-router-dom";
 import { useAuthContext } from "./hooks/useAuthContext";
 
 // pages & components
@@ -12,7 +12,7 @@ function App() {
   return (
     <div className="App">
       {authIsReady && (
-        <BrowserRouter>
+        <HashRouter>
           <Navbar />
           <Routes>
             <Route
@@ -28,7 +28,7 @@ function App() {
               element={!user ? <Signup /> : <Navigate to="/" />}
             />
           </Routes>
-        </BrowserRouter>
+        </HashRouter>
       )}
     </div>
   );
