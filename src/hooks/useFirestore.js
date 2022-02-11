@@ -1,5 +1,5 @@
 import { useReducer, useEffect } from "react";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import { projectFirestore, timestamp } from "../firebase/config";
 
 let initialState = {
